@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>A4 Print Page</title>
+
+<style>
+  body {
+    background: #ccc;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  /* A4 page settings */
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: white;
+    margin: auto;
+    padding: 15mm;
+    box-sizing: border-box;
+  }
+
+  .header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10mm;
+  }
+
+  .content {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .print-btn {
+    margin: 20px auto;
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  /* Hide button when printing */
+  @media print {
+    body {
+      background: none;
+      padding: 0;
+    }
+
+    .print-btn {
+      display: none;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<button class="print-btn" onclick="window.print()">🖨 Print</button>
+
+<div class="page">
+  <div class="header">
+    Company Announcement
+  </div>
+
+  <div class="content">
+    <p>这是一个标准的 A4 打印页面。</p>
+    <p>无论在浏览器里看，还是打印出来，尺寸都会一致。</p>
+    <p>你可以放：</p>
+    <ul>
+      <li>公司公告</li>
+      <li>员工通知</li>
+      <li>Invoice / Report</li>
+      <li>Form</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
